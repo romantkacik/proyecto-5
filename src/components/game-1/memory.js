@@ -54,6 +54,7 @@ export default function initializeMemoryGame() {
   let lockBoard = false
   let firstCard, secondCard
   let matchCount = 0
+  let score = 0
 
   function flipCard() {
     if (lockBoard) return
@@ -77,12 +78,15 @@ export default function initializeMemoryGame() {
     if (isMatch) {
       disableCards()
       matchCount++
+      score++
+      updateScore()
       if (matchCount === images.length / 2) {
-        alert('¡Felicidades, has ganado!')
+        alert(`¡Felicidades, has ganado! Tu puntaje es: ${score}`)
         resetGame()
       }
     } else {
       unflipCards()
+      resetScore()
     }
   }
 
@@ -115,7 +119,19 @@ export default function initializeMemoryGame() {
       card.addEventListener('click', flipCard)
     })
     matchCount = 0
+    score = 0
+    updateScore()
     shuffle(images)
+  }
+
+  function resetScore() {
+    score = 0
+    updateScore()
+  }
+
+  function updateScore() {
+    const scoreElement = document.getElementById('score')
+    scoreElement.textContent = `Score: ${score}`
   }
 
   const cards = document.querySelectorAll('.card')
