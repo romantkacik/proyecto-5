@@ -1,37 +1,24 @@
-//main.js
+// main.js
 
-import './style.css'
-import { startMemoryGame } from './components/game-1/game'
-import { startTrheeInARow } from './components/game-2/game'
-import { startHanged } from './components/game-3/game'
-import { startToPlay } from './components/startToPlay/start'
+import initializeMemoryGame from './src/components/game-1/memory'
 
-const games = {
-  'Memory game': startMemoryGame,
-  'Three in a Row': startTrheeInARow,
-  'Hanged Country': startHanged,
-}
-
-const pageContainer = document.querySelector('.page-container')
-const startButton = document.getElementById('start-btn')
-const gameSelectContainer = document.getElementById('game-select-container')
-const gameContainer = document.getElementById('game-deployment-container')
-
-startButton.addEventListener('click', () => {
-  gameSelectContainer.innerHTML = ''
-  const buttons = createGameButtons(Object.keys(games), startToPlay)
-  gameSelectContainer.appendChild(buttons)
+document.getElementById('startButton').addEventListener('click', function () {
+  this.style.display = 'none' // Oculta el botón "Comenzar"
+  document.getElementById('gamesContainer').style.display = 'flex' // Muestra los botones de juego
 })
 
-function createGameButtons(gameNames, onClickHandler) {
-  const buttonsContainer = document.createElement('div')
-
-  gameNames.forEach((gameName) => {
-    const button = document.createElement('button')
-    button.textContent = gameName
-    button.addEventListener('click', () => onClickHandler(gameName))
-    buttonsContainer.appendChild(button)
+document.querySelectorAll('.gameButton').forEach((button) => {
+  button.addEventListener('click', function () {
+    const selectedGame = this.dataset.game
+    loadGame(selectedGame)
   })
+})
 
-  return buttonsContainer
+function loadGame(game) {
+  // Carga el juego correspondiente
+  document.getElementById('gameArea').innerHTML = '' // Limpia cualquier contenido previo
+  if (game === 'game1') {
+    initializeMemoryGame() // Inicializa el juego de memoria
+  }
+  // Agrega más casos para otros juegos si los tienes
 }

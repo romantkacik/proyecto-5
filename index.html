@@ -3,26 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Game Website</title>
     <link rel="stylesheet" href="./style.css" />
-    <meta name="author" content="Roman Luciano Tkacik" />
-    <link rel="shortcut icon" href="./public/Ag1_09.jpg" type="image/x-icon" />
-
-    <title>Document</title>
   </head>
   <body>
-    <!-- Contenedor principal de la página -->
-    <div class="page-container">
-      <!-- Presentacion -->
-      <h1 id="start-btn">Start to play!</h1>
-
-      <!-- Contenedor de selección de juego -->
-      <div class="game-select" id="game-select-container"></div>
-
-      <!-- Contenedor de despliegue de juego -->
-      <div class="game-deployment" id="game-deployment-container"></div>
+    <button id="startButton">Comenzar</button>
+    <div id="gamesContainer" style="display: none">
+      <button class="gameButton" data-game="game1">Juego 1</button>
+      <button class="gameButton" data-game="game2">Juego 2</button>
+      <button class="gameButton" data-game="game3">Juego 3</button>
     </div>
+    <div id="gameArea" class="card-container"></div>
 
-    <!-- Archivo de script principal -->
-    <script type="module" src="main.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

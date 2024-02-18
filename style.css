@@ -1,41 +1,44 @@
+/* style.css */
+
 body {
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: Arial, sans-serif;
   margin: 0;
-  background-image: url(./public/8979433.jpg);
-  background-size: cover;
-  background-attachment: fixed; /* Agregado para fijar el fondo */
-  color: #000000;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Cambiamos a dirección de columna */
+  align-items: center;
+  min-height: 100vh; /* Usamos min-height para asegurarnos de que la página tenga al menos el alto de la ventana */
+  background-color: #f0f0f0;
+  box-sizing: border-box;
 }
-#start-btn {
-  margin-top: 20px;
+
+button {
   padding: 10px 20px;
-  font-size: 18px;
-  background-color: #007bff;
-  color: white;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  margin-bottom: 10px;
 }
 
-#start-btn:hover {
+button:hover {
   background-color: #0056b3;
 }
 
-.game-select button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+#startButton {
+  margin-top: 20px;
 }
 
-.game-select button:hover {
-  background-color: #45a049;
+#gamesContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px; /* Añadimos un margen superior para separar los botones del área de juego */
+}
+
+.gameArea {
+  margin-top: 20px;
+  text-align: center; /* Alineamos el contenido al centro */
 }

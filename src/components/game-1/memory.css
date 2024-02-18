@@ -1,0 +1,58 @@
+/* memory.css */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 90%;
+  height: 90vh;
+  margin: auto;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* memory.css */
+
+.card {
+  width: 200px; /* Ancho del div de la carta */
+  height: 180px; /* Alto del div de la carta */
+  perspective: 1000px; /* Establecer perspectiva para 3D */
+  margin: 10px; /* Margen entre las cartas */
+}
+
+.card div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  cursor: pointer;
+  opacity: 50%;
+}
+.card div:hover {
+  scale: 1.1;
+  opacity: 100%;
+}
+
+.card .card-front {
+  background-color: #e0e0e0; /* Color de fondo de la parte delantera */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+.card .card-back {
+  background-size: contain; /* Ajusta el tamaño de la imagen de fondo para que quepa dentro del div */
+  background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
+  background-position: center; /* Centra la imagen de fondo dentro del div */
+  transform: rotateY(180deg); /* Inicialmente oculto, gira 180 grados */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  opacity: 100%;
+  transition: 0.5s;
+}
+
+.card.flip .card-front {
+  transform: rotateY(180deg); /* Gira la parte delantera 180 grados */
+}
+
+.card.flip .card-back {
+  transform: rotateY(0deg); /* Muestra la parte trasera sin rotación */
+}
