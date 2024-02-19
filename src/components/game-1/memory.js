@@ -11,6 +11,8 @@ function shuffle(array) {
 }
 
 export default function initializeMemoryGame() {
+  const scoreElement = document.getElementById('score')
+  scoreElement.style.display = 'block' // Mostrar el elemento de puntaje al cargar el juego
   const images = [
     '1.png',
     '1.copy.png',
@@ -81,7 +83,7 @@ export default function initializeMemoryGame() {
       score++
       updateScore()
       if (matchCount === images.length / 2) {
-        alert(`¡Felicidades, has ganado! Tu puntaje es: ${score}`)
+        alert(`¡Felicidades, has completado! Tu puntaje es: ${score}`)
         resetGame()
       }
     } else {

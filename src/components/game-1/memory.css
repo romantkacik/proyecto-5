@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 90%;
-  height: 90vh;
+  height: 85vh;
   margin: auto;
   justify-content: center;
   justify-items: center;
@@ -15,8 +15,8 @@
 /* memory.css */
 
 .card {
-  width: 200px; /* Ancho del div de la carta */
-  height: 180px; /* Alto del div de la carta */
+  width: 170px; /* Ancho del div de la carta */
+  height: 150px; /* Alto del div de la carta */
   perspective: 1000px; /* Establecer perspectiva para 3D */
   margin: 10px; /* Margen entre las cartas */
 }
@@ -55,4 +55,14 @@
 
 .card.flip .card-back {
   transform: rotateY(0deg); /* Muestra la parte trasera sin rotación */
+}
+#score {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #2de145;
+  color: white;
+  margin-bottom: 10px;
 }
