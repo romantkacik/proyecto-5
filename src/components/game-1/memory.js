@@ -1,8 +1,5 @@
-// game-1.js
-
 import './memory.css'
 
-// Función para cargar imágenes aleatorias
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -10,9 +7,20 @@ function shuffle(array) {
   }
 }
 
-export default function initializeMemoryGame() {
-  const scoreElement = document.getElementById('score')
-  scoreElement.style.display = 'block' // Mostrar el elemento de puntaje al cargar el juego
+export function initializeMemoryGame() {
+  let scoreElement = document.getElementById('score')
+  let attempts = 0 // Variable para contar los intentos
+
+  // Crear el elemento score si no existe en el DOM
+  if (!scoreElement) {
+    scoreElement = document.createElement('div')
+    scoreElement.id = 'score'
+    document.body.appendChild(scoreElement) // Añadirlo al final del body
+  }
+
+  // Mostrar el elemento de puntaje al cargar el juego
+  scoreElement.style.display = 'block'
+
   const images = [
     '1.png',
     '1.copy.png',
@@ -35,12 +43,16 @@ export default function initializeMemoryGame() {
   shuffle(images)
 
   const gameArea = document.getElementById('gameArea')
+  const area1 = document.createElement('div')
+  area1.classList.add('area1')
+  gameArea.appendChild(area1)
 
   images.forEach((image) => {
     const card = document.createElement('div')
     card.classList.add('card')
     card.dataset.name = image.split('.')[0] // Establecer el nombre de la carta
-    gameArea.appendChild(card)
+
+    area1.appendChild(card) // Agregar la carta a area1
 
     const cardFront = document.createElement('div')
     cardFront.classList.add('card-front')
@@ -56,7 +68,6 @@ export default function initializeMemoryGame() {
   let lockBoard = false
   let firstCard, secondCard
   let matchCount = 0
-  let score = 0
 
   function flipCard() {
     if (lockBoard) return
@@ -75,20 +86,19 @@ export default function initializeMemoryGame() {
   }
 
   function checkForMatch() {
+    attempts++ // Incrementar los intentos
+    updateScore() // Actualizar el puntaje
     let isMatch = firstCard.dataset.name === secondCard.dataset.name
 
     if (isMatch) {
       disableCards()
       matchCount++
-      score++
-      updateScore()
       if (matchCount === images.length / 2) {
-        alert(`¡Felicidades, has completado! Tu puntaje es: ${score}`)
+        alert(`¡Felicidades, has completado! Total de intentos: ${attempts}`)
         resetGame()
       }
     } else {
       unflipCards()
-      resetScore()
     }
   }
 
@@ -115,25 +125,19 @@ export default function initializeMemoryGame() {
   }
 
   function resetGame() {
+    attempts = 0 // Reiniciar el contador de intentos
+    matchCount = 0
     const cards = document.querySelectorAll('.card')
     cards.forEach((card) => {
       card.classList.remove('flip')
       card.addEventListener('click', flipCard)
     })
-    matchCount = 0
-    score = 0
-    updateScore()
     shuffle(images)
-  }
-
-  function resetScore() {
-    score = 0
-    updateScore()
+    updateScore() // Asegurarse de que el puntaje se actualice al reiniciar el juego
   }
 
   function updateScore() {
-    const scoreElement = document.getElementById('score')
-    scoreElement.textContent = `Score: ${score}`
+    scoreElement.textContent = `Intentos: ${attempts}`
   }
 
   const cards = document.querySelectorAll('.card')

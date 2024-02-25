@@ -1,0 +1,57 @@
+/* style.css */
+
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90%;
+  height: 85vh;
+  margin: auto;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.gameArea {
+  margin-top: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: lightgray;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.choose {
+  margin-top: 20px;
+} */

@@ -1,6 +1,7 @@
 // main.js
 
-import initializeMemoryGame from './src/components/game-1/memory'
+import { inizialiceThreeInARow } from './src/components/game-2/three'
+import { initializeMemoryGame } from './src/components/game-1/memory'
 
 document.getElementById('startButton').addEventListener('click', function () {
   this.style.display = 'none' // Oculta el botón "Comenzar"
@@ -17,8 +18,13 @@ document.querySelectorAll('.gameButton').forEach((button) => {
 function loadGame(game) {
   // Carga el juego correspondiente
   document.getElementById('gameArea').innerHTML = '' // Limpia cualquier contenido previo
+
   if (game === 'game1') {
-    initializeMemoryGame() // Inicializa el juego de memoria
+    initializeMemoryGame()
+    // Inicializa el juego de memoria
+  }
+  if (game === 'game2') {
+    inizialiceThreeInARow() // Inicializa el juego de tres en raya
   }
   // Agrega más casos para otros juegos si los tienes
 }
