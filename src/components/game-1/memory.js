@@ -7,9 +7,13 @@ function shuffle(array) {
   }
 }
 
+let scoreElement
+let attempts = 0 // Variable para contar los intentos
+
 export function initializeMemoryGame() {
-  let scoreElement = document.getElementById('score')
-  let attempts = 0 // Variable para contar los intentos
+  // Limpiar el contenido previo en el área de juego
+  const gameArea = document.getElementById('gameArea')
+  gameArea.innerHTML = ''
 
   // Crear el elemento score si no existe en el DOM
   if (!scoreElement) {
@@ -42,7 +46,6 @@ export function initializeMemoryGame() {
 
   shuffle(images)
 
-  const gameArea = document.getElementById('gameArea')
   const area1 = document.createElement('div')
   area1.classList.add('area1')
   gameArea.appendChild(area1)
@@ -142,4 +145,11 @@ export function initializeMemoryGame() {
 
   const cards = document.querySelectorAll('.card')
   cards.forEach((card) => card.addEventListener('click', flipCard))
+}
+
+// Función para ocultar el contador de intentos al cambiar de juego
+export function hideAttemptsCounter() {
+  if (scoreElement) {
+    scoreElement.style.display = 'none'
+  }
 }

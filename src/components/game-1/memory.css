@@ -1,6 +1,6 @@
 /* memory.css */
 
-.card-container .area1 {
+.area1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 90%;

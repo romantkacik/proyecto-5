@@ -1,7 +1,5 @@
-// main.js
-
-import { inizialiceThreeInARow } from './src/components/game-2/three'
-import { initializeMemoryGame } from './src/components/game-1/memory'
+import { initializeMemoryGame, hideAttemptsCounter } from './src/components/game-1/memory'
+import { initializeThreeInARow } from './src/components/game-2/three'
 
 document.getElementById('startButton').addEventListener('click', function () {
   this.style.display = 'none' // Oculta el botón "Comenzar"
@@ -22,9 +20,9 @@ function loadGame(game) {
   if (game === 'game1') {
     initializeMemoryGame()
     // Inicializa el juego de memoria
-  }
-  if (game === 'game2') {
-    inizialiceThreeInARow() // Inicializa el juego de tres en raya
+    hideAttemptsCounter() // Oculta el contador de intentos al cambiar al juego 1
+  } else if (game === 'game2') {
+    initializeThreeInARow() // Inicializa el juego de tres en raya
   }
   // Agrega más casos para otros juegos si los tienes
 }

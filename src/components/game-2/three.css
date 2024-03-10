@@ -1,34 +1,24 @@
-/* style.css */
+/* three.css */
 
-/* body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+.area2 {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-}
-
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  flex-direction: column;
   width: 90%;
-  height: 85vh;
+  height: 60vh;
   margin: auto;
   justify-content: center;
   justify-items: center;
   align-items: center;
   gap: 20px;
 }
+.row {
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+}
 
 h1 {
   margin-bottom: 20px;
-}
-
-.gameArea {
-  margin-top: 20px;
 }
 
 .cell {
@@ -46,12 +36,13 @@ h1 {
   background-color: lightgray;
 }
 
-.message {
+#message {
   margin-top: 20px;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
+  color: black;
 }
 
-.choose {
+#gamesContainer {
   margin-top: 20px;
-} */
+}

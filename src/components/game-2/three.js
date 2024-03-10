@@ -1,13 +1,11 @@
-//* THREE IN A ROW
 import './three.css'
-// script.js
 
 // Constantes para representar los valores de los jugadores
 const PLAYER_X = 'X'
 const PLAYER_O = 'O'
 
 // Constante para representar el tablero de juego
-const board = [
+let board = [
   ['', '', ''],
   ['', '', ''],
   ['', '', ''],
@@ -16,21 +14,43 @@ const board = [
 // Variable para seguir el turno actual del jugador
 let currentPlayer = ''
 
+// Variable para el área de juego
+let area2
+
+// Elemento del botón de reinicio
+let restartButton
+
+// Variable para verificar si el juego ha terminado
+let gameEnded = false
+
 // Función para crear el mensaje y agregarlo al DOM
 function createMessageElement() {
   const messageElement = document.createElement('div')
   messageElement.id = 'message'
-  document.body.appendChild(messageElement)
+  area2.appendChild(messageElement)
+
+  // Botón para reiniciar el juego
+  restartButton = document.createElement('button')
+  restartButton.textContent = 'Reiniciar Juego'
+  restartButton.addEventListener('click', resetGame)
 }
 
 // Función para inicializar el juego de tres en raya
-export function inizialiceThreeInARow() {
-  // Llama a la función para crear el elemento del mensaje
+export function initializeThreeInARow() {
+  const gameArea = document.getElementById('gameArea')
+
+  // Limpiar cualquier contenido previo en el área de juego
+  gameArea.innerHTML = ''
+
+  // Crear el área de juego
+  area2 = document.createElement('div')
+  area2.classList.add('area2')
+  gameArea.appendChild(area2)
+
+  // Llama a la función para crear el elemento del mensaje y el botón de reinicio
   createMessageElement()
 
-  const gameBoard = document.getElementById('gameArea')
-  gameBoard.innerHTML = ''
-
+  // Crear el tablero de juego
   for (let i = 0; i < 3; i++) {
     const row = document.createElement('div')
     row.classList.add('row')
@@ -44,7 +64,7 @@ export function inizialiceThreeInARow() {
       row.appendChild(cell)
     }
 
-    gameBoard.appendChild(row)
+    area2.appendChild(row)
   }
 
   // Inicializar el turno del jugador X
@@ -54,6 +74,8 @@ export function inizialiceThreeInARow() {
 
 // Función para manejar el clic en una celda del tablero
 function handleCellClick(event) {
+  if (gameEnded) return // Si el juego ha terminado, no hacer nada
+
   const row = event.target.getAttribute('data-row')
   const col = event.target.getAttribute('data-col')
 
@@ -66,7 +88,18 @@ function handleCellClick(event) {
     // Verificar si el jugador actual ha ganado
     if (checkWinner(currentPlayer)) {
       displayMessage(`¡El jugador ${currentPlayer} ha ganado!`)
+      area2.appendChild(restartButton) // Mostrar el botón de reinicio
+      gameEnded = true // El juego ha terminado
+      return // Detener la ejecución después de mostrar el mensaje
     } else {
+      // Verificar si hay empate
+      if (checkDraw()) {
+        displayMessage('¡Empate!')
+        area2.appendChild(restartButton) // Mostrar el botón de reinicio
+        gameEnded = true // El juego ha terminado
+        return
+      }
+
       // Cambiar al siguiente jugador
       currentPlayer = currentPlayer === PLAYER_X ? PLAYER_O : PLAYER_X
       displayMessage(`Turno del jugador ${currentPlayer}`)
@@ -104,29 +137,41 @@ function checkWinner(player) {
   return false
 }
 
+// Función para verificar si hay un empate
+function checkDraw() {
+  for (let row of board) {
+    for (let cell of row) {
+      if (cell === '') {
+        return false // Todavía hay celdas vacías, no hay empate
+      }
+    }
+  }
+  return true // Todas las celdas están ocupadas, hay empate
+}
+
 // Función para mostrar un mensaje en el tablero
 function displayMessage(message) {
   const messageElement = document.getElementById('message')
   messageElement.textContent = message
 }
 
-// Función para iniciar el juego
-function startGame(player) {
-  currentPlayer = player
-  createGameBoard()
+// Función para limpiar el tablero y reiniciar el juego
+function resetGame() {
+  area2.removeChild(restartButton) // Eliminar el botón de reinicio
+  board = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', ''],
+  ]
+  currentPlayer = PLAYER_X
+  gameEnded = false // Restablecer el estado del juego
+  initializeThreeInARow()
   displayMessage(`Turno del jugador ${currentPlayer}`)
 }
 
-// Obtener los botones de inicio del juego
-const startButtons = document.querySelectorAll('.start-button')
-
-// Asignar eventos de clic a los botones de inicio del juego
-startButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    // Ocultar los botones de inicio del juego
-    document.getElementById('choose').style.display = 'none'
-
-    // Iniciar el juego con el jugador correspondiente
-    startGame(button.textContent.trim())
-  })
-})
+// Función para iniciar el juego
+function startGame(player) {
+  currentPlayer = player
+  initializeThreeInARow()
+  displayMessage(`Turno del jugador ${currentPlayer}`)
+}
