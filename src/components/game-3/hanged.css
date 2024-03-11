@@ -1,0 +1,59 @@
+/* Estilos para el juego del ahorcado */
+#area3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.img0 > img {
+  height: 600px;
+  margin-left: 100px;
+  margin-right: 150px;
+  margin-bottom: 100px;
+}
+.img0 {
+  background-color: rgb(255, 255, 255);
+}
+
+#palabra_a_adivinar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#palabra_a_adivinar span {
+  margin: 0 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#jugar {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.abecedario > button {
+  margin: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.contenedorAbecedario {
+  width: 80%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Estilos para los botones del abecedario */
+div button:hover {
+  background-color: #007bff;
+  color: white;
+}
