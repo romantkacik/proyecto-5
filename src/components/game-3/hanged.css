@@ -1,22 +1,33 @@
 /* Estilos para el juego del ahorcado */
 #area3 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100%;
+  margin-top: 100px;
 }
-.img0 > img {
+
+#selectContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hanged-image-container > img {
   height: 600px;
   margin-left: 100px;
   margin-right: 150px;
   margin-bottom: 100px;
 }
-.img0 {
+
+.hanged-image-container {
   background-color: rgb(255, 255, 255);
+  margin-left: 50px;
 }
 
 #palabra_a_adivinar {
@@ -38,12 +49,13 @@
   cursor: pointer;
 }
 
-.abecedario > button {
+.contenedorAbecedario > button {
   margin: 5px;
   padding: 5px 10px;
   font-size: 14px;
   cursor: pointer;
 }
+
 .contenedorAbecedario {
   width: 80%;
   display: flex;
