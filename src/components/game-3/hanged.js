@@ -108,17 +108,19 @@ export function initializeHanged() {
   function reiniciarBotones() {
     document.querySelectorAll('.letra').forEach((boton) => {
       boton.disabled = false
+      boton.classList.remove('letra-usada')
     })
   }
 
   const contenedorAbecedario = document.createElement('div')
   contenedorAbecedario.className = 'contenedorAbecedario'
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach((letra) => {
+  'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.split('').forEach((letra) => {
     const botonLetra = document.createElement('button')
     botonLetra.className = 'letra'
     botonLetra.textContent = letra
     botonLetra.addEventListener('click', function () {
-      this.disabled = true // Deshabilita el botón luego de ser presionado
+      this.disabled = true
+      this.classList.add('letra-usada')
       verificarLetra(letra)
     })
     contenedorAbecedario.appendChild(botonLetra)

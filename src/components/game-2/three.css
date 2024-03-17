@@ -19,6 +19,7 @@
 
 h1 {
   margin-bottom: 20px;
+  color: white;
 }
 
 .cell {
@@ -40,9 +41,15 @@ h1 {
   margin-top: 20px;
   font-size: 2em;
   font-weight: bold;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 #gamesContainer {
   margin-top: 20px;
+}
+@media screen and (max-width: 430px) {
+  .cell {
+    width: 70px;
+    height: 70px;
+  }
 }

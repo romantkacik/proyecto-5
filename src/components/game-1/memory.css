@@ -64,3 +64,37 @@
   color: white;
   margin-bottom: 10px;
 }
+@media screen and (max-width: 850px) {
+  .card {
+    width: 150px; /* Ancho del div de la carta */
+    height: 130px; /* Alto del div de la carta */
+  }
+}
+@media screen and (max-width: 770px) {
+  .card {
+    width: 130px; /* Ancho del div de la carta */
+    height: 110px; /* Alto del div de la carta */
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .card {
+    width: 100px; /* Ancho del div de la carta */
+    height: 80px; /* Alto del div de la carta */
+    margin: 10px;
+  }
+  .area1 {
+    gap: 10px;
+    height: 65vh;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 680px) {
+  .area1 {
+    gap: 10px;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

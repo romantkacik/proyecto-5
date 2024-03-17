@@ -1,6 +1,7 @@
 /* Estilos para el juego del ahorcado */
 #area3 {
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -16,35 +17,46 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.hanged-image-container > img {
-  height: 600px;
-  margin-left: 100px;
-  margin-right: 150px;
-  margin-bottom: 100px;
+  gap: 50px;
 }
 
 .hanged-image-container {
+  width: 650px; /* Establece un ancho fijo para el contenedor de las imágenes */
+  height: 650px; /* Establece una altura fija para coincidir con la altura de la imagen */
   background-color: rgb(255, 255, 255);
   margin-left: 50px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  border-radius: 10px;
+  border: solid 4px black;
+  display: flex; /* Asegura que el contenedor use flexbox */
+  justify-content: flex-start; /* Centra horizontalmente el contenido (la imagen) */
+  align-items: center; /* Centra verticalmente el contenido (la imagen) */
+}
+
+.hanged-image-container > img {
+  max-height: 100%; /* Asegura que la imagen no exceda la altura del contenedor */
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  margin: 0; /* Ajusta o elimina el margen si es necesario */
+  display: block; /* Cambia de flex a block para la imagen */
 }
 
 #palabra_a_adivinar {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  color: white;
 }
 
 #palabra_a_adivinar span {
-  margin: 0 5px;
+  margin: 5px;
   font-size: 24px;
   font-weight: bold;
+  padding-top: 30px;
 }
 
 #jugar {
-  margin: 20px 0;
-  padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
 }
@@ -68,4 +80,32 @@
 div button:hover {
   background-color: #007bff;
   color: white;
+}
+
+.letra-usada {
+  background-color: #1d2bcc; /* Un color más oscuro o el que prefieras */
+  color: rgb(255, 255, 255); /* Asegúrate de que el color del texto se vea bien con el fondo */
+}
+
+@media screen and (max-width: 1200px) {
+  #area3 {
+    display: flex;
+    flex-direction: column;
+  }
+  .hanged-image-container {
+    width: 300px; /* Establece un ancho fijo para el contenedor de las imágenes */
+    height: 300px; /* Establece una altura fija para coincidir con la altura de la imagen */
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .hanged-image-container {
+    width: 150px; /* Establece un ancho fijo para el contenedor de las imágenes */
+    height: 150px; /* Establece una altura fija para coincidir con la altura de la imagen */
+    margin: auto;
+  }
+  #palabra_a_adivinar span {
+    margin: 2px;
+  }
 }
