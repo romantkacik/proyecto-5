@@ -74,6 +74,11 @@ export function initializeHanged() {
   selectContainer.id = 'selectContainer'
   area3.appendChild(selectContainer)
 
+  const titulo = document.createElement('h1')
+  titulo.textContent = 'Adivina el país de Europa'
+  titulo.className = 'titulo'
+  selectContainer.appendChild(titulo)
+
   const palabraAAdivinar = document.createElement('p')
   palabraAAdivinar.id = 'palabra_a_adivinar'
   selectContainer.appendChild(palabraAAdivinar)

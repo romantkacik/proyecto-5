@@ -87,6 +87,15 @@ div button:hover {
   color: rgb(255, 255, 255); /* Asegúrate de que el color del texto se vea bien con el fondo */
 }
 
+.titulo {
+  font-size: 40px;
+  font-family: 'Times New Roman', 'Times New Roman', Times, serif;
+  border: 4px solid blue;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #121c92;
+}
+
 @media screen and (max-width: 1200px) {
   #area3 {
     display: flex;
@@ -96,6 +105,13 @@ div button:hover {
     width: 300px; /* Establece un ancho fijo para el contenedor de las imágenes */
     height: 300px; /* Establece una altura fija para coincidir con la altura de la imagen */
     margin: auto;
+  }
+  .titulo {
+    font-size: 20px;
+    margin-top: 40px;
+  }
+  #selectContainer {
+    gap: 0px;
   }
 }
 
@@ -107,5 +123,8 @@ div button:hover {
   }
   #palabra_a_adivinar span {
     margin: 2px;
+  }
+  .titulo {
+    font-size: 15px;
   }
 }
