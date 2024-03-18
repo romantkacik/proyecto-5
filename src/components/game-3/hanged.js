@@ -39,9 +39,9 @@ const arrayPaises = [
   'Bosnia y Herzegovina',
 ]
 const imagenesAhorcado = [
-  './public/hanged/img0.png', // Estado inicial
-  './public/hanged/img1.png', // Primer error
-  './public/hanged/img2.png', // Segundo error
+  './public/hanged/img0.png',
+  './public/hanged/img1.png',
+  './public/hanged/img2.png',
   './public/hanged/img3.png',
   './public/hanged/img4.png',
   './public/hanged/img5.png',
@@ -151,7 +151,6 @@ export function initializeHanged() {
       }
     } else if (aciertos === palabraSeleccionada.length) {
       alert('¡Felicidades! Has adivinado la palabra correctamente.')
-      // Opción para reiniciar el juego aquí
     }
   }
 }

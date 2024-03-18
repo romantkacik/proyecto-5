@@ -26,22 +26,22 @@ export function initializeMemoryGame() {
   scoreElement.style.display = 'block'
 
   const images = [
-    '1.png',
-    '1.copy.png',
-    '2.png',
-    '2.copy.png',
-    '3.png',
-    '3.copy.png',
-    '4.png',
-    '4.copy.png',
-    '5.png',
-    '5.copy.png',
-    '6.png',
-    '6.copy.png',
-    '7.png',
-    '7.copy.png',
-    '8.png',
-    '8.copy.png',
+    './public/memory/1.png',
+    './public/memory/1.copy.png',
+    './public/memory/2.png',
+    './public/memory/2.copy.png',
+    './public/memory/3.png',
+    './public/memory/3.copy.png',
+    './public/memory/4.png',
+    './public/memory/4.copy.png',
+    './public/memory/5.png',
+    './public/memory/5.copy.png',
+    './public/memory/6.png',
+    './public/memory/6.copy.png',
+    './public/memory/7.png',
+    './public/memory/7.copy.png',
+    './public/memory/8.png',
+    './public/memory/8.copy.png',
   ]
 
   shuffle(images)
