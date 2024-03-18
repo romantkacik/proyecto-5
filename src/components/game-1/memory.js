@@ -26,8 +26,8 @@ export function initializeMemoryGame() {
   scoreElement.style.display = 'block'
 
   const images = [
-    './public/memory/1.png',
-    './public/memory/1.copy.png',
+    './memory/1.png',
+    './memory/1.copy.png',
     './public/memory/2.png',
     './public/memory/2.copy.png',
     './public/memory/3.png',
