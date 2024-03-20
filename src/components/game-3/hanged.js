@@ -39,14 +39,14 @@ const arrayPaises = [
   'Bosnia y Herzegovina',
 ]
 const imagenesAhorcado = [
-  './hanged/img0.png',
-  './hanged/img1.png',
-  './hanged/img2.png',
-  './hanged/img3.png',
-  './hanged/img4.png',
-  './hanged/img5.png',
-  './hanged/img6.png',
-  './hanged/img7.png',
+  './assets/hanged/img0.png',
+  './assets//hanged/img1.png',
+  './assets//hanged/img2.png',
+  './assets//hanged/img3.png',
+  './assets//hanged/img4.png',
+  './assets//hanged/img5.png',
+  './assets//hanged/img6.png',
+  './assets//hanged/img7.png',
 ]
 
 let palabraSeleccionada = ''
