@@ -22,8 +22,8 @@ function loadGame(game) {
     initializeMemoryGame()
     hideAttemptsCounter() // Oculta el contador de intentos al cambiar al juego 1
   } else if (game === 'game2') {
-    initializeThreeInARow() // Inicializa el juego de tres en raya
+    initializeThreeInARow()
   } else if (game === 'game3') {
-    initializeHanged() // Inicializa el juego del ahorcado
+    initializeHanged()
   }
 }
