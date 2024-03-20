@@ -26,22 +26,22 @@ export function initializeMemoryGame() {
   scoreElement.style.display = 'block'
 
   const images = [
-    './memory/1.png',
-    './memory/1.copy.png',
-    './public/memory/2.png',
-    './public/memory/2.copy.png',
-    './public/memory/3.png',
-    './public/memory/3.copy.png',
-    './public/memory/4.png',
-    './public/memory/4.copy.png',
-    './public/memory/5.png',
-    './public/memory/5.copy.png',
-    './public/memory/6.png',
-    './public/memory/6.copy.png',
-    './public/memory/7.png',
-    './public/memory/7.copy.png',
-    './public/memory/8.png',
-    './public/memory/8.copy.png',
+    'img1.png',
+    'img1copy.png',
+    'img2.png',
+    'img2copy.png',
+    'img3.png',
+    'img3copy.png',
+    'img4.png',
+    'img4copy.png',
+    'img5.png',
+    'img5copy.png',
+    'img6.png',
+    'img6copy.png',
+    'img7.png',
+    'img7copy.png',
+    'img8.png',
+    'img8copy.png',
   ]
 
   shuffle(images)
@@ -53,7 +53,7 @@ export function initializeMemoryGame() {
   images.forEach((image) => {
     const card = document.createElement('div')
     card.classList.add('card')
-    card.dataset.name = image.split('.')[0] // Establecer el nombre de la carta
+    card.dataset.name = image.replace('copy', '').split('.')[0]
 
     area1.appendChild(card) // Agregar la carta a area1
 
@@ -63,7 +63,7 @@ export function initializeMemoryGame() {
 
     const cardBack = document.createElement('div')
     cardBack.classList.add('card-back')
-    cardBack.style.backgroundImage = `url(public/memory/${image})`
+    cardBack.style.backgroundImage = `url(/public/memory/${image})`
     card.appendChild(cardBack)
   })
 
