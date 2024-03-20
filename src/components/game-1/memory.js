@@ -26,22 +26,22 @@ export function initializeMemoryGame() {
   scoreElement.style.display = 'block'
 
   const images = [
-    'img1.png',
-    'img1copy.png',
-    'img2.png',
-    'img2copy.png',
-    'img3.png',
-    'img3copy.png',
-    'img4.png',
-    'img4copy.png',
-    'img5.png',
-    'img5copy.png',
-    'img6.png',
-    'img6copy.png',
-    'img7.png',
-    'img7copy.png',
-    'img8.png',
-    'img8copy.png',
+    '/memory/img1.png',
+    '/memory/img1copy.png',
+    '/memory/img2.png',
+    '/memory/img2copy.png',
+    '/memory/img3.png',
+    '/memory/img3copy.png',
+    '/memory/img4.png',
+    '/memory/img4copy.png',
+    '/memory/img5.png',
+    '/memory/img5copy.png',
+    '/memory/img6.png',
+    '/memory/img6copy.png',
+    '/memory/img7.png',
+    '/memory/img7copy.png',
+    '/memory/img8.png',
+    '/memory/img8copy.png',
   ]
 
   shuffle(images)
@@ -63,7 +63,7 @@ export function initializeMemoryGame() {
 
     const cardBack = document.createElement('div')
     cardBack.classList.add('card-back')
-    cardBack.style.backgroundImage = `url(/memory/${image})`
+    cardBack.style.backgroundImage = `url(/public/memory/${image})`
     card.appendChild(cardBack)
   })
 
