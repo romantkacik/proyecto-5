@@ -219,7 +219,7 @@ export function initializeMemoryGame() {
 
     const cardBack = document.createElement('div')
     cardBack.classList.add('card-back')
-    cardBack.style.backgroundImage = `url(/public/memory/${image})`
+    cardBack.style.backgroundImage = `url(/memory/${image})`
     card.appendChild(cardBack)
   })
 
