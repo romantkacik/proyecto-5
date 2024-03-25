@@ -96,9 +96,9 @@ export function initializeMemoryGame() {
     if (isMatch) {
       disableCards()
       matchCount++
-      // Verifica si se ha completado el juego con todas las cartas descubiertas
+      
       if (matchCount === images.length / 2) {
-        // Usar setTimeout para retrasar la alerta hasta que la última pareja de cartas sea visible
+        
         setTimeout(() => {
           alert(`¡Felicidades, has completado el juego en ${attempts} intentos!`)
           resetGame()

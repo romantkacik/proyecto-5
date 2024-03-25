@@ -3,7 +3,7 @@ import './hanged.css'
 const arrayPaises = [
   'Alemania',
   'Austria',
-  'Bélgica',
+  'Belgica',
   'Bulgaria',
   'Chipre',
   'Croacia',
@@ -27,7 +27,7 @@ const arrayPaises = [
   'Portugal',
   'Reino Unido',
   'República Checa',
-  'Rumanía',
+  'Rumania',
   'Suecia',
   'Noruega',
   'Suiza',
